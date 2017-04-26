@@ -1,4 +1,3 @@
-Hidden Message
 Step One
 The program is passed two messages in the form of strings. These messages have been converted to
 Morse code tokens. The goal is to find all of the possible unique sequences of remaining tokens after
