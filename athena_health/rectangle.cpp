@@ -1,10 +1,11 @@
 /*Leetcode 84. Largest Rectangle in Histogram*/
 /*
-* (1) DataStruct->Stack(index), internally it should be an increasing array.
-* (2) Once Popped on a specfic height {y}, to get the rectangle bonded by this height, we need to know corresponding length = left-right.
-* (3) After poped, left = stack.top()+1,   right=curindex.  Think it in a reverse way.
+* (0) DataStruct->Stack(index), internally it should be an increasing array. 
+* (1) POP: if cur height is less than stack.top(). Push will always happened.
+* (2) Once Popped on a specfic height {y}, we need to get the rectangle bonded by this height, we need to know corresponding length = left-right.
+* (3) After poped, left = stack.top()+1,   right=hight[curindex-1].  Think it in a reverse way.
       there can't be a height within [left+1,y] is less than y. Otherwise left and y can't be next to each other.
-      there also can't be a height within [y,curheight] is less than y. Otherwise y can't be in the stack.
+      there also can't be a height within [y,cur-1] is less than y. Otherwise y can't be in the stack.
 * (4) Don't forget to see if stack is empty at the end. if not, calculate rectangle like (3).
 */
 class Solution {
