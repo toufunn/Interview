@@ -8,6 +8,28 @@
 #include<string>
 using namespace std;
 
+/*Key:  String Manipulations+DFS+pruning path if not valid.
+ *Issue hit: if not pruning, run time become exponential, and some mem leak. 
+ *1st Q:
+ *"Efficiently" recursively generate the candidate by pre-creating the index array [details will be given later]
+ *Filter out unqualified combinations while generating the candidate by using the last_Index_removed!
+ *(I forgot it at the 1st place and the run time became exponential!)
+ *Flagging X with removable position. Once completely removed the REMOVAL, start to eliminate 'X'.
+ *Using unordered_map to see if this combination is duplicated or not.
+ *2Q: Generalize the issue:
+ *Save intermediate seq list (unordered_map), make it as  "given", and follow the 1st Q.
+ *Extension: [reflected on my code]
+ *The number of removals is not limited to 2. 
+ *The removable character are also not limited to morse code. 
+ * Explanation for index array
+ /* Generate occurrence lists  len = strlen(REMOVAL)
+     * e.g give="*-_-***", removal="*-*"
+     * index will have 3 elements
+     * index[0] = occurrence of STAR from given, which is [0,4,5,6]
+     * index[1] = occurrence of DASH from given, which is [1,3]
+     * index[2] = occurrence of SEP from given, which is [2]
+  */
+
 typedef unordered_map<string, int>Mymap;
 enum morse_symbol{
     STAR = 0,
