@@ -5,4 +5,4 @@ Solving Puzzle is more challenging/interesting than solving Leetcode during the 
 The ability to convert the issue to data structure will reflect how you resolve the real issue at work.
 Once the puzzle become more and more generalized, how to write an elastic program to accomdate that become challenging. 
 
-But again, it is hard to finish discuss/write/complie/analyze within 90 minutes.
+But again, it is not easy to finish discuss/write/complie/analyze within 90 minutes.
